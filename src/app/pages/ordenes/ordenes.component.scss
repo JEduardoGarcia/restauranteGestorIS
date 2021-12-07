@@ -1,0 +1,83 @@
+mat-toolbar {
+    justify-content: space-between;
+    background-color: #db4a39;
+}
+
+.content {
+    padding: 16px;
+}
+
+.content > mat-card {
+    margin-bottom: 16px;
+}
+.posicionBotonColumnas{
+    align-items: flex-end;
+}
+
+.botonColumnas{
+
+    background-color: #FFFFFF;
+    border-radius: 25px;
+
+    .textoBotonCols{
+
+        padding-top:    1vh;
+        padding-bottom: 1vh;
+        padding-left:  2.5vw;
+        padding-right: 2.5vw;
+
+    }
+
+}
+
+.detallesOrden{
+
+    width: 100%;
+
+}
+
+.botonCantidad{
+
+    border-radius: 50%;
+
+}
+
+.imagen{
+    background-size: cover;
+    height: 32.98611111vh;
+}
+
+.cantidadContenedor{
+
+    display: flex;
+    justify-content: center;
+
+    .botonQuitar{
+        display: flex;
+        justify-content: center;
+        height: auto;
+        width: 20%;
+        float: left;
+    }
+
+    .cantidadMostrarContenedor{
+        display: flex;
+        justify-content: center;
+        height: auto;
+        width: 20%;
+        float: left;
+        .textoCantidadMostrar{
+            font-family: Arial;
+            font-size: 25px;
+        }
+    }
+
+    .botonAgregar{
+        display: flex;
+        justify-content: center;
+        height: auto;
+        width: 20%;
+        float: left;
+    }
+
+}

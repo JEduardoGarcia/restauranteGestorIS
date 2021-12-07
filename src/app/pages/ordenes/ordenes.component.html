@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+    <span>Ordenes actuales</span>
+    <div class="posicionBotonColumnas">
+        <button mat-button class="botonColumnas" (click)="toggleGridColumns()" fxHide.lt-md>
+            <span *ngIf="gridColumns === 4">Cuatro columnas</span>
+            <span *ngIf="gridColumns === 3">Tres columnas</span>
+        </button>
+    </div>
+</mat-toolbar>
+<div class="content">
+<div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let orden of ordenes">
+    <mat-card class="mat-elevation-z4">
+        <mat-card-header>
+        <mat-card-title>Orden XX</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p *ngFor="let platillo of orden.ordenes">
+                {{platillo.nombre}} - {{platillo.cantidad}}
+            </p>
+            <p>
+                Total= $ {{orden.total}}
+            </p>
+        </mat-card-content>
+    </mat-card>
+    </div>
+</div>
+</div>

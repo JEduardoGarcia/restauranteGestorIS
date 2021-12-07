@@ -1,0 +1,45 @@
+<mat-toolbar color="primary">
+    <span>Agregar platillos a la orden</span>
+    <div class="posicionBotonColumnas">
+        <button mat-button class="botonColumnas" (click)="toggleGridColumns()" fxHide.lt-md>
+            <span *ngIf="gridColumns === 4">Cuatro columnas</span>
+            <span *ngIf="gridColumns === 3">Tres columnas</span>
+        </button>
+    </div>
+</mat-toolbar>
+<div class="content">
+<div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let platillo of arregloMostrar">
+    <mat-card class="mat-elevation-z4">
+        <mat-card-header>
+        <mat-card-title>{{platillo.nombre}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image class="imagen" [src]="platillo.imagen">
+        <mat-card-content>
+            <input class="detallesOrden" type="text" name="detalles" placeholder="Detalles de la orden" [(ngModel)]="platillo.detalles" />
+        </mat-card-content>
+        <mat-card-actions style="margin-top: 0vh; margin-bottom:  0vh;">
+            <div class="cantidadContenedor">
+                <div class="botonQuitar">
+                    <button mat-button class="botonCantidad" (click)="quitar(platillo)">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">remove_circle_outline</mat-icon>
+                    </button>
+                </div>
+                <div class="cantidadMostrarContenedor">
+                    <p class="textoCantidadMostrar">
+                        {{platillo.cantidad}}
+                    </p>
+                </div>
+                <div class="botonAgregar">
+                    <button mat-button class="botonCantidad" (click)="agregar(platillo)">
+                        <mat-icon aria-hidden="false" aria-label="Example home icon">add_circle_outline</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+    </div>
+</div>
+</div>
+
+<button class="button" (click)="agregarOrden()">➕</button>
